@@ -1,37 +1,36 @@
-import React from 'react'
-import styles from './Footer.module.scss'
-import config from '../../data/SiteConfig'
+import React from "react";
+import styles from "./Footer.module.scss";
+import config from "../../data/SiteConfig";
 
 const Footer = () => (
   <footer>
     <div className={styles.container}>
       <div>
-        <a
+        {/*        <a
           href={`https://twitter.com/${config.userTwitter}`}
           target="_blank"
           rel="noopener noreferrer"
         >
             Twitter
-        </a>
+        </a> */}
         <a
           href={`https://github.com/${config.userGitHub}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-            GitHub
+          GitHub
         </a>
         <a
           href={config.siteUrl + config.siteRss}
           target="_blank"
           rel="noopener noreferrer"
         >
-            RSS
+          RSS
         </a>
       </div>
       <div className={styles.copyright}>{config.copyright}</div>
     </div>
   </footer>
-  )
+);
 
-
-export default Footer
+export default Footer;

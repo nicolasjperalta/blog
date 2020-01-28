@@ -10,4 +10,4 @@ tags:
 
 ## Hello
 
-Hello github pages !
+Hello GitHub pages !

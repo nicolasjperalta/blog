@@ -1,17 +1,17 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql , Link } from 'gatsby'
-import Layout from '../layout'
-import Bio from '../components/Bio'
-import PostTags from '../components/PostTags'
-import SocialLinks from '../components/SocialLinks'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
-import styles from  './post.module.scss'
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import Layout from "../layout";
+import Bio from "../components/Bio";
+import PostTags from "../components/PostTags";
+import SocialLinks from "../components/SocialLinks";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
+import styles from "./post.module.scss";
 import "./prism-okaidia.css";
 
-export default  ({ data, pageContext }) => {
-  const { slug , nexttitle , nextslug , prevtitle , prevslug } = pageContext;
+export default ({ data, pageContext }) => {
+  const { slug, nexttitle, nextslug, prevtitle, prevslug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
   const date = postNode.fields.date;
@@ -27,11 +27,13 @@ export default  ({ data, pageContext }) => {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div>
           <h1>{post.title}</h1>
-          <p className={styles.postMeta}>{date} &mdash; {postNode.timeToRead} Min Read  </p>
+          <p className={styles.postMeta}>
+            {date} &mdash; {postNode.timeToRead} Min Read{" "}
+          </p>
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div className={styles.postMeta}>
             <PostTags tags={post.tags} />
-            <SocialLinks postPath={slug} postNode={postNode} />
+            {/*  <SocialLinks postPath={slug} postNode={postNode} /> */}
           </div>
           <hr />
           <Bio config={config} />
@@ -52,8 +54,8 @@ export default  ({ data, pageContext }) => {
         </nav>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
